@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adição de notícias</title>
+</head>
+<body>
+    <h2>Adicionar Notícias</h2>
+    <% if(validacao) { %>
+        <ul>
+            <% for(var i = 0; i < validacao.length; i++) { %>
+            <li>
+                    <%= validacao[i].msg %>
+            </li>
+            <% } %>
+        </ul>
+    <% } %> 
+    <form action="noticias/salvar" method="POST">
+        <label>Título</label>
+        <input type="text" id="titulo"  name="titulo" placeholder="Título da notícia" value="<%= noticia.titulo %>" />
+        <br /><br />
+        <label>Resumo</label>
+        <input type="text" id="resumo"  name="resumo" placeholder="Resumo da notícia" value="<%= noticia.resumo %>" />
+        <br /><br />
+        <label>Autor</label>
+        <input type="text" id="autor"  name="autor" placeholder="Autor da notícia" value="<%= noticia.autor %>" />
+        <br /><br />
+        <label>Data</label>
+        <input type="date" id="data_noticia"  name="data_noticia" placeholder="Data do fato" value="<%= noticia.data_noticia %>" />
+        <br /><br />
+        <textarea type="text" id="noticia" name="noticia" rows="5" cols="30" title="Notícias"><%= noticia.noticia %></textarea>
+        <br /><br />
+        <input type="submit" id="enviar" />
+      
+        </form>
+</body>
+</html>
