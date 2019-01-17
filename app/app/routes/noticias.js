@@ -1,19 +1,11 @@
-module.exports = function (aplication) {
-    aplication.get('/noticias', function(req, res){
-        var connection = aplication.config.dbConnection();
-        var noticiasModel = new aplication.app.models.noticiasDAO(connection);
-        noticiasModel.getNoticias(function(error, result) {
-            res.render('noticias/noticias', {noticias : result});
-        }); 
+//refatorei a rota, tirando os controllers
+module.exports = function (application) {
+    application.get('/noticias', function(req, res){
+        application.app.controllers.noticias.listarNoticias(application, req, res);
     });
 
-    aplication.get('/noticia',function(req, res){
-        var connection = aplication.config.dbConnection();
-        var noticiasModel = new aplication.app.models.noticiasDAO(connection);
-           
-        noticiasModel.getNoticia(function (error, result) {
-            res.render('noticias/noticia', {noticia : result});
-        });
+    application.get('/noticia',function(req, res){
+        application.app.controllers.noticias.mostrarNoticia(application, req, res);
         });
     
 }
