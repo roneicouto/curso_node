@@ -1,5 +1,6 @@
 //1 .chamando o módulo do Express
-var app = require('express')();
+var express = require('express');
+var app = express();
 var msg = require('../mod_teste');
 var bodyParser = require("body-parser");
 var expressValidator = require("express-validator");
@@ -8,6 +9,8 @@ var expressValidator = require("express-validator");
 app.use(bodyParser.urlencoded({extended:true}));
 //5. incluindo o ExpressValidator
 app.use(expressValidator());
+//9. mapeando arquivos estáticos da aplicação
+app.use(express.static('./app/public'));
 
 //2. chamando o EJS
 app.set('view engine', 'ejs');                                                     //ejs para controle de VIEWS do projeto    
