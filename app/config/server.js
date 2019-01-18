@@ -30,7 +30,7 @@ consign()
 //var views = require('../app/views')
 
 //inicializa e testa servidor
-app.listen(3000,'localhost',function(){
+app.listen(80,'localhost',function(){
     console.log(msg());
 })
 
