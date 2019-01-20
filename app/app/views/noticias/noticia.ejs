@@ -47,18 +47,22 @@
 			<div class="row">
 					<div class="col-md-12">
 						<div class="noticia_wrapper">
-							<span class="noticia_autor"><%= noticia.autor %></span>
-							<a href="/noticia" class="noticia_titulo"><%= noticia.titulo %></a>
-							<span class="noticia_data"><%= noticia.data_noticia %></span>
+							<span class="noticia_autor"><b>Autor:</b> <%= noticia[0].autor %></span>
+							<span class="noticia_titulo"><b>Título:</b> <%= noticia[0].titulo %></span>
+							<span class="noticia_data"><b>Data:</b> <%= noticia[0].data_noticia %></span>
 							<br />
 							<p class="noticia_resumo">
-									<%= noticia.resumo %>
+								<b>Resumo:</b> <%= noticia[0].resumo %>
 							</p>
+							<br />
+							<span class="noticia" >
+								<h4> <b>Fatos:</b> </h4>
+								<p><%= noticia[0].noticia %></p>
+							</span>
 						</div>
 					</div>
 			</div>
 	    </div>
-	
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	
 	</body>

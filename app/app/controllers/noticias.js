@@ -13,7 +13,7 @@ module.exports.mostrarNoticia = function (application, req, res) {
     console.log(req.query);
     var id_noticia = req.query;
     
-    noticiasModel.getNoticia(id_noticia,function (error, result) {
+    noticiasModel.mostrarNoticia(id_noticia,function (error, result) {
         res.render('noticias/noticia', {noticia : result});
     });
 }

@@ -9,7 +9,9 @@ function noticiasDAO(connection){
 
     noticiasDAO.prototype.mostrarNoticia = function (id_noticia,callback) {
         console.log('ID = ' + id_noticia.id_noticia);
+        var qry = 'select * from noticias where id_noticia = '+ id_noticia.id_noticia;
         this._connection.query('select * from noticias where id_noticia = '+ id_noticia.id_noticia,callback);
+        console.log('A query executada é: ' + qry);
         
     };
 
