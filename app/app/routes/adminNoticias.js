@@ -11,4 +11,14 @@ module.exports = function (application) {
     application.post('/noticias/salvar',function(req, res){
         application.app.controllers.admin.salvarNoticias(application, req, res);
     });
+
+    //editar
+    application.get('/edit/:id', function(req, res){
+        application.app.controllers.admin.editarNoticias(application, req, res);
+        console.log('entrou na rota de editar!');
+    });
+
+    application.post('noticias/salvarEdicao', function(req, res){
+        application.app.controllers.admin.editarNoticias(application, req, res);
+    });
 };

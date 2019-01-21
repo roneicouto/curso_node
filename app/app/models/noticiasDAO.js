@@ -23,6 +23,13 @@ function noticiasDAO(connection){
         this._connection.query('select * from noticias order by id_noticia DESC LIMIT 5;',callback);
     }
 
+    noticiasDAO.prototype.editarNoticias = function(id_noticia, callback){
+        console.log('id para edição: '+id_noticia.id_noticia);
+        var qry = 'UPDATE noticias SET ? WHERE id_noticia = ' +id_noticia.id_noticia;
+        this._connection.query(qry);
+        console.log('a query de edicao foi executada');
+    }
+
 //Exportando
 module.exports = function() {
     return noticiasDAO;
